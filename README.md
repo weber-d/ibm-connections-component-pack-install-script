@@ -13,7 +13,7 @@ IBM released their Component Pack (formerly known as _Pink_) in version 6.0.0.7 
 
 ### Fix broken pvc
 
-[IBM outsourced their pvcs to `connections-persistent-storage-nfs-0.1.0.tgz`](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_install_push_docker_images.html). _Think about before you do it!_ It's not only unflexible to have everything mounted in `/pv-connections`. It will balso break modern dynamic provisioners like [nfs-client-provisioner](https://github.com/helm/charts/tree/master/stable/nfs-client-provisioner) since [IBM uses incompatible labels](https://github.com/helm/charts/issues/11707).
+[IBM outsourced their pvcs to `connections-persistent-storage-nfs-0.1.0.tgz`](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_install_push_docker_images.html). _Think about before you install this package!_ It's not only unflexible to have everything mounted in `/pv-connections`. It will balso break modern dynamic provisioners like [nfs-client-provisioner](https://github.com/helm/charts/tree/master/stable/nfs-client-provisioner) since [IBM uses incompatible labels](https://github.com/helm/charts/issues/11707).
 
 Since we noticed that all apps automatically allocate their pvcs anyway, we skipped the pvc archive. For `customizer` and `elasticsearch`, this doesn't seem to apply. So I reversed the required pvcs from those archive and commented out all problematic labels. You need to apply them:
 
