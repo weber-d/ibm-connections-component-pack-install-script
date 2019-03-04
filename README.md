@@ -6,8 +6,8 @@ IBM released their Component Pack (formerly known as _Pink_) in version 6.0.0.7 
 
 - Since IBM doesn't have a Docker registry nor Helm repo, they only provide a package with exported packed images. See [this documentation](https://docs.docker.com/registry/deploying/)
 - [Manually deploy Component Pack archives to this registry](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_install_push_docker_images.html)
-- Clone this repo to a work/or jumphost that can access all required machines
-- Kubernetes cluster: I'm using [Rancher's rke](https://github.com/rancher/rke)
+- A kubernetes cluster (I'm using [Rancher's rke](https://github.com/rancher/rke)) with [all Prerequisites for Component Pack](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_install_push_docker_images.html)
+- Cloned copy of this repo to a work/or jumphost that can access all required machines
 
 ## Installation process
 
@@ -58,7 +58,7 @@ You may ask why I generate long, complex `--set` calls on CLI instead of a clean
 
 Thanks to [stoeps13](https://github.com/stoeps13), IBM got informed that not all people let the default name. So this component pack update let users choose their cluster name. This is important when your k8s cluster is named something other than `cluster.local`. Sadly this wasn't done consistently. The Mongodb Statefulset still contains hardcoded `cluster.local` code, which leads to crashing containers.
 
-To fix this, hacky changes on the yml files are required: Go to `microservices_connections/hybridcloud/helmbuilds` and unpack the `infrastructure` tgz file
+To fix this, the following hacky changes on the yml files are required: Go to `microservices_connections/hybridcloud/helmbuilds` and unpack the `infrastructure` tgz file
 
     tar xfvz infrastructure-0.1.0-20190205-020035.tgz
 
