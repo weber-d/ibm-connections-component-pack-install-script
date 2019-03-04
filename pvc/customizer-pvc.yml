@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: customizernfsclaim
+spec:
+  #  selector:
+  #     matchLabels:
+  #        app: customizervolumeapp
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 2Gi

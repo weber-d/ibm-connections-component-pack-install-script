@@ -1,0 +1,72 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: es-pvc-backup
+  labels:
+    component: elasticsearch
+    role: es-pvc-backup
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 10Gi
+#  selector:
+#    matchLabels:
+#      component: elasticsearch
+#      role: es-pv-backup
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: es-pvc-es-data-0
+  labels:
+    component: elasticsearch
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 10Gi
+#  selector:
+#    matchLabels:
+#      component: elasticsearch
+#      role: es-data-0
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: es-pvc-es-data-1
+  labels:
+    component: elasticsearch
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 10Gi
+#  selector:
+#    matchLabels:
+#      component: elasticsearch
+#      role: es-data-1
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: es-pvc-es-data-2
+  labels:
+    component: elasticsearch
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 10Gi
+#  selector:
+#    matchLabels:
+#      component: elasticsearch
+#      role: es-data-2
