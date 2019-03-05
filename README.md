@@ -1,6 +1,6 @@
 # IBM Connections Component Pack (Pink) 6.0.0.7 Install script
 
-IBM released their Component Pack (formerly known as _Pink_) in version 6.0.0.7 for Connections. It contains awesome technology based on modern tools like Docker and Kubernetes. Unfortunately, it's hard to install and doesn't care about restrictions on custom storage providers line nfs. This script should make it consistent and create some documentation, so that we can full automate this using Ansible later.
+IBM released their Component Pack (formerly known as _Pink_) in version 6.0.0.7 for Connections. It contains awesome technology based on modern tools like Docker and Kubernetes. Unfortunately, it's hard to install and doesn't care about restrictions on custom storage providers like nfs. This script should make it consistent and create some documentation, so that we can full automate this using Ansible later.
 
 ## Prerequisites
 
