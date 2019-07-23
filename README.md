@@ -4,7 +4,7 @@ IBM released their Component Pack (formerly known as _Pink_) in version 6.0.0.7 
 
 ## Prerequisites
 
-- Download Component Pack in [IBMs Fix Central](https://www-945.ibm.com/support/fixcentral) by selecting IBM Connections on Linux, search for Text Component Pack and select the latest version (6.0.0.8 at time of writing)
+- Download Component Pack in [IBMs Fix Central](https://www-945.ibm.com/support/fixcentral) by selecting IBM Connections on Linux, search for Text Component Pack and select the latest version (6.0.0.8 at time of writing). Pre-Selected [here](https://www-945.ibm.com/support/fixcentral/swg/selectFixes?parent=Collaboration%20Solutions&product=ibm/Lotus/Lotus+Connections&release=6.0.0.0&platform=Linux&function=textSearch&text=component+pack)
 - Since IBM doesn't have a Docker registry nor Helm repo, they only provide a package with exported packed images. See [this documentation](https://docs.docker.com/registry/deploying/)
 - [Manually deploy Component Pack archives to this registry](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_install_push_docker_images.html)
 - A kubernetes cluster (I'm using [Rancher's rke](https://github.com/rancher/rke)) with [all Prerequisites for Component Pack](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_install_push_docker_images.html)
